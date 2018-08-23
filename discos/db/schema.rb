@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_08_22_201224) do
 
-  create_table "discs", force: :cascade do |t|
+  create_table "discos", force: :cascade do |t|
     t.string "title"
     t.string "artist"
     t.integer "year"

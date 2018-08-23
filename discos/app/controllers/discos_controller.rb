@@ -1,26 +1,30 @@
 class DiscosController < ApplicationController
     def index
-        @all = Disc.all
+        @all = Disco.all
       end
 
     def new
-      @discs = Disc.new
+      @disco = Disco.new
     end
+
     def edit
-      @disc = Disc.find(params[:id])
+      @disco = Disco.find(params[:id])
     end
+
     def create
-        @discs = Disc.new(disc_params)
-    
-        @discs.save
-        #  redirect_to @discs
+        @disco = Disco.new(disc_params)
+
+        @disco.save
+         redirect_to @disco
     end
+
     def show
-      @discs = Disc.find(params[:id])
+      @disco = Disco.find(params[:id])
     end
   private
+
   def disc_params
-    params.require(:disc).permit(:title, :artist, :year)
+    params.require(:disco).permit(:title, :artist, :year)
   end
 # render plain: disc_params.inspect
 end
