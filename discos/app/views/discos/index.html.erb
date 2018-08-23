@@ -1,0 +1,19 @@
+<h1>Listing Record Information</h1>
+ <%= link_to 'New Disco', new_disco_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Year</th>
+    <th></th>
+  </tr>
+ 
+  <% @all.each do |disc| %>
+    <tr>
+      <td><%= disc.title %></td>
+      <td><%= disc.artist%></td>
+      <td><%= disc.year %></td>
+      <td><%= link_to 'Show', disco_path(disc) %></td>
+    </tr>
+  <% end %>
+</table>
